@@ -22,7 +22,7 @@ function Header() {
         {isMobile && (
           <IconButton
             onClick={handleShowMenuToggle}
-            aria-label="Show menu"
+            aria-label="Toggle mobile menu"
             colorScheme="alpha"
             size="lg"
             icon={<HamburgerIcon />}>
