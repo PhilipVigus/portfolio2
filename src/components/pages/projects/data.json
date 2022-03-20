@@ -1,16 +1,20 @@
 {
   "projects": [
     {
-      "title": "URL Shortener"
+      "title": "URL Shortener",
+      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack"
     },
     {
-      "title": "Slack Bot"
+      "title": "Slack Bot",
+      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack"
     },
     {
-      "title": "Film Follower"
+      "title": "Film Follower",
+      "description": "A website my wife and I use to track film trailers to watch, and films to shortlist to watch at a later date"
     },
     {
-      "title": "Weather App"
+      "title": "Weather App",
+      "description": "A seven day weather forecast app"
     }
   ]
 }
