@@ -5,9 +5,7 @@
       "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack",
       "technologies": {
         "languages": ["Java"],
-        "frontend": {
-          "frameworks-libraries": ["Thymeleaf", "Bootstrap", "Alpine.js"]
-        },
+        "frontend": ["Thymeleaf", "Bootstrap", "Alpine.js"],
         "backend": {
           "frameworks-libraries": ["Spring Boot"],
           "database": ["PostgreSQL"]
@@ -32,9 +30,7 @@
       "description": "A website my wife and I use to track film trailers to watch, and films to shortlist to watch at a later date",
       "technologies": {
         "languages": ["PHP"],
-        "frontend": {
-          "frameworks-libraries": ["Tailwind", "Alpine.js"]
-        },
+        "frontend": ["Tailwind", "Alpine.js"],
         "backend": {
           "frameworks-libraries": ["Laravel", "Livewire"],
           "database": ["PostgreSQL"]
@@ -48,9 +44,7 @@
       "description": "A seven day weather forecast app",
       "technologies": {
         "languages": ["JavaScript"],
-        "frontend": {
-          "frameworks-libraries": ["React", "Redux", "Styled Components"]
-        },
+        "frontend": ["React", "Redux", "Styled Components"],
         "backend": {
           "frameworks-libraries": ["Express"],
           "database": ["SQLite"]
