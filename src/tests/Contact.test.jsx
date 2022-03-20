@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Contact from '../components/Contact';
+import Contact from '../components/pages/contact/Contact';
 
 test('renders Contact page', () => {
   render(<Contact />);
