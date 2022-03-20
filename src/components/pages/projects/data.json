@@ -2,19 +2,62 @@
   "projects": [
     {
       "title": "URL Shortener",
-      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack"
+      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack",
+      "technologies": {
+        "languages": ["Java"],
+        "frontend": {
+          "frameworks-libraries": ["Thymeleaf", "Bootstrap", "Alpine.js"]
+        },
+        "backend": {
+          "frameworks-libraries": ["Spring Boot"],
+          "database": ["PostgreSQL"]
+        },
+        "testing": ["JUnit", "Mockito"],
+        "ci-cd": ["GitHub Actions", "Heroku", "Google Domains"]
+      }
     },
     {
       "title": "Slack Bot",
-      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack"
+      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "backend": {
+          "frameworks-libraries": ["Node.js", "Slack Bolt"]
+        },
+        "testing": ["Jest"]
+      }
     },
     {
       "title": "Film Follower",
-      "description": "A website my wife and I use to track film trailers to watch, and films to shortlist to watch at a later date"
+      "description": "A website my wife and I use to track film trailers to watch, and films to shortlist to watch at a later date",
+      "technologies": {
+        "languages": ["PHP"],
+        "frontend": {
+          "frameworks-libraries": ["Tailwind", "Alpine.js"]
+        },
+        "backend": {
+          "frameworks-libraries": ["Laravel", "Livewire"],
+          "database": ["PostgreSQL"]
+        },
+        "testing": ["PHPUnit"],
+        "ci-cd": ["Amazon AWS (EC2)"]
+      }
     },
     {
       "title": "Weather App",
-      "description": "A seven day weather forecast app"
+      "description": "A seven day weather forecast app",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "frontend": {
+          "frameworks-libraries": ["React", "Redux", "Styled Components"]
+        },
+        "backend": {
+          "frameworks-libraries": ["Express"],
+          "database": ["SQLite"]
+        },
+        "testing": ["Jest", "React Testing Library", "Supertest"],
+        "ci-cd": ["Circle CI", "Netlify", "Heroku"]
+      }
     }
   ]
 }
