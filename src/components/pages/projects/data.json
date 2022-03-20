@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "title": "URL Shortener"
+    },
+    {
+      "title": "Slack Bot"
+    },
+    {
+      "title": "Film Follower"
+    },
+    {
+      "title": "Weather App"
+    }
+  ]
+}
