@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Project from '../components/pages/projects/Project';
+import Project, { githubLinkText, demoLinkText } from '../components/pages/projects/Project';
 
 describe('Project Component', () => {
   it('Renders the Project component', () => {
@@ -17,8 +17,8 @@ describe('Project Component', () => {
         ci_cd: ['ci/cd solution']
       },
       links: {
-        github: 'github link',
-        demo: 'demo link'
+        github: 'www.github.com',
+        demo: 'www.demo.com'
       }
     };
 
@@ -32,5 +32,7 @@ describe('Project Component', () => {
     expect(screen.getByText(testData.technologies.backend.databases[0])).toBeInTheDocument();
     expect(screen.getByText(testData.technologies.testing[0])).toBeInTheDocument();
     expect(screen.getByText(testData.technologies.ci_cd[0])).toBeInTheDocument();
+    expect(screen.getByText(githubLinkText).href).toContain('www.github.com');
+    expect(screen.getByText(demoLinkText).href).toContain('www.demo.com');
   });
 });

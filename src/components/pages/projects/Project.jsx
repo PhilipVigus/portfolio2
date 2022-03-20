@@ -1,6 +1,9 @@
 import { Box, Link, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
+const GITHUB_LINK_TEXT = 'GitHub Repo';
+const DEMO_LINK_TEXT = 'Live Demo';
+
 function Project({ data }) {
   return (
     <Box p={10} w="75%" mx="auto">
@@ -25,8 +28,8 @@ function Project({ data }) {
         {data.technologies.ci_cd.map((solution) => (
           <Text key={solution}>{solution}</Text>
         ))}
-        <Link href={data.links.github}>GitHub Repo</Link>
-        {data.links.demo !== '' && <Link href={data.links.demo}>Live Demo</Link>}
+        <Link href={data.links.github}>{GITHUB_LINK_TEXT}</Link>
+        {data.links.demo !== '' && <Link href={data.links.demo}>{DEMO_LINK_TEXT}</Link>}
       </Box>
     </Box>
   );
@@ -54,3 +57,4 @@ Project.propTypes = {
 };
 
 export default Project;
+export { GITHUB_LINK_TEXT as githubLinkText, DEMO_LINK_TEXT as demoLinkText };
