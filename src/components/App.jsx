@@ -2,7 +2,7 @@ import './App.css';
 import { Box } from '@chakra-ui/react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './header/Header';
-import About from './About';
+import About from './about/About';
 import Projects from './Projects';
 import Contact from './Contact';
 
