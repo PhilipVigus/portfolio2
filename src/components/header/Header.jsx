@@ -31,7 +31,7 @@ function Header() {
         )}
       </Flex>
 
-      <Collapse in={showMobileMenu && isMobile}>
+      <Collapse in={isMobile && showMobileMenu}>
         <VStack>
           <Links />
         </VStack>
