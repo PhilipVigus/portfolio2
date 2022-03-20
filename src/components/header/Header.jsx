@@ -1,4 +1,5 @@
-import { Box, Flex, HStack, Button, Collapse, VStack, useMediaQuery } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { Box, Flex, HStack, Collapse, VStack, useMediaQuery, IconButton } from '@chakra-ui/react';
 
 import { useState } from 'react';
 import Links from './Links';
@@ -18,7 +19,16 @@ function Header() {
           </HStack>
         )}
 
-        {isMobile && <Button onClick={handleShowMenuToggle}>Toggle</Button>}
+        {isMobile && (
+          <IconButton
+            onClick={handleShowMenuToggle}
+            aria-label="Show menu"
+            colorScheme="alpha"
+            size="lg"
+            icon={<HamburgerIcon />}>
+            Toggle
+          </IconButton>
+        )}
       </Flex>
 
       <Collapse in={showMobileMenu && isMobile}>
