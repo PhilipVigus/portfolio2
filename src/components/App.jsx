@@ -1,10 +1,9 @@
-import './App.css';
 import { Box } from '@chakra-ui/react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './Header';
-import About from './About';
-import Projects from './Projects';
-import Contact from './Contact';
+import Header from './header/Header';
+import About from './pages/about/About';
+import Projects from './pages/projects/Projects';
+import Contact from './pages/contact/Contact';
 
 function App() {
   return (

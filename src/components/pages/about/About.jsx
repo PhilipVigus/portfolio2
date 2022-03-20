@@ -1,4 +1,4 @@
-import { Box, ListItem, UnorderedList, Text, Divider } from '@chakra-ui/react';
+import { Box, ListItem, UnorderedList, Text } from '@chakra-ui/react';
 
 function About() {
   return (
@@ -9,8 +9,6 @@ function About() {
         became an ICT teacher before taking a role in educational quality assurance.
       </Text>
 
-      <Divider mt={4} />
-
       <Text mt={4}>
         About two and a half years a go I changed direction, returning to my roots in software
         development. I completed the Maker&apos;s Academy boot camp, and soon after secured a role
@@ -18,8 +16,6 @@ function About() {
         of the company&apos;s website from a legacy Java implementation to a new codebase using the
         TALL stack (Tailwind, Alpine, Livewire and Laravel).
       </Text>
-
-      <Divider mt={4} />
 
       <Text mt={4}>
         In addition to the technical knowledge required to work as a developer, I have excellent
@@ -30,8 +26,6 @@ function About() {
         always be something new to understand.
       </Text>
 
-      <Divider mt={4} />
-
       <Text mt={4}>My responsibilities at Mumsnet have included:</Text>
       <UnorderedList>
         <ListItem>
@@ -40,7 +34,7 @@ function About() {
         <ListItem>Implementing the CMS using a headless Wordpress with a Laravel frontend</ListItem>
         <ListItem>Part of a team of three who responsible for the site&apos;s main forum</ListItem>
         <ListItem>
-          Mentoring junior developers and onboarding colleagues to the backend codebase
+          Mentoring new developers and onboarding colleagues to the backend codebase
         </ListItem>
         <ListItem>
           Optimising SQL scripts to speed up the migration of millions of records to a new database
