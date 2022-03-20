@@ -32,11 +32,9 @@ function Header() {
       </Flex>
 
       <Collapse in={showMobileMenu && isMobile}>
-        <Box>
-          <VStack>
-            <Links />
-          </VStack>
-        </Box>
+        <VStack>
+          <Links />
+        </VStack>
       </Collapse>
     </Box>
   );
