@@ -15,6 +15,10 @@ describe('Project Component', () => {
         },
         testing: ['testing framework'],
         ci_cd: ['ci/cd solution']
+      },
+      links: {
+        github: 'github link',
+        demo: 'demo link'
       }
     };
 

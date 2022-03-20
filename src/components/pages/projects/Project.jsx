@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Link, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 function Project({ data }) {
@@ -25,6 +25,8 @@ function Project({ data }) {
         {data.technologies.ci_cd.map((solution) => (
           <Text key={solution}>{solution}</Text>
         ))}
+        <Link href={data.links.github}>GitHub Repo</Link>
+        {data.links.demo !== '' && <Link href={data.links.demo}>Live Demo</Link>}
       </Box>
     </Box>
   );
@@ -43,7 +45,11 @@ Project.propTypes = {
       }).isRequired,
       testing: PropTypes.arrayOf(PropTypes.string).isRequired,
       ci_cd: PropTypes.arrayOf(PropTypes.string).isRequired
-    }).isRequired
+    }).isRequired,
+    links: PropTypes.shape({
+      github: PropTypes.string.isRequired,
+      demo: PropTypes.string.isRequired
+    })
   }).isRequired
 };
 

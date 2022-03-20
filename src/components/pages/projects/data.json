@@ -11,7 +11,11 @@
           "databases": ["PostgreSQL"]
         },
         "testing": ["JUnit", "Mockito"],
-        "ci_cd": ["GitHub Actions", "Heroku", "Google Domains"]
+        "ci_cd": ["GitHub Actions", "Heroku"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/url-shortener",
+        "demo": "http://wibbly.philvigus.com/"
       }
     },
     {
@@ -26,6 +30,10 @@
         },
         "testing": ["Jest"],
         "ci_cd": []
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/external-services-slack-bot",
+        "demo": ""
       }
     },
     {
@@ -40,6 +48,10 @@
         },
         "testing": ["PHPUnit"],
         "ci_cd": ["Amazon AWS (EC2)"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/film-follower",
+        "demo": "https://filmfollower.philvigus.com"
       }
     },
     {
@@ -54,6 +66,28 @@
         },
         "testing": ["Jest", "React Testing Library", "Supertest"],
         "ci_cd": ["Circle CI", "Netlify", "Heroku"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/weather-app",
+        "demo": "https://weather-phil.netlify.app"
+      }
+    },
+    {
+      "title": "Portfolio",
+      "description": "My professional portfolio",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "frontend": ["React", "Chakra UI"],
+        "backend": {
+          "frameworks": [],
+          "databases": []
+        },
+        "testing": ["Jest", "React Testing Library"],
+        "ci_cd": ["Netlify"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/portfolio2",
+        "demo": "https://www.philvigus.com"
       }
     }
   ]
