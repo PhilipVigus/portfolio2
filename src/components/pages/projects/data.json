@@ -7,11 +7,11 @@
         "languages": ["Java"],
         "frontend": ["Thymeleaf", "Bootstrap", "Alpine.js"],
         "backend": {
-          "frameworks-libraries": ["Spring Boot"],
-          "database": ["PostgreSQL"]
+          "frameworks": ["Spring Boot"],
+          "databases": ["PostgreSQL"]
         },
         "testing": ["JUnit", "Mockito"],
-        "ci-cd": ["GitHub Actions", "Heroku", "Google Domains"]
+        "ci_cd": ["GitHub Actions", "Heroku", "Google Domains"]
       }
     },
     {
@@ -19,10 +19,13 @@
       "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack",
       "technologies": {
         "languages": ["JavaScript"],
+        "frontend": [],
         "backend": {
-          "frameworks-libraries": ["Node.js", "Slack Bolt"]
+          "frameworks": ["Node.js", "Slack Bolt"],
+          "databases": []
         },
-        "testing": ["Jest"]
+        "testing": ["Jest"],
+        "ci_cd": []
       }
     },
     {
@@ -32,11 +35,11 @@
         "languages": ["PHP"],
         "frontend": ["Tailwind", "Alpine.js"],
         "backend": {
-          "frameworks-libraries": ["Laravel", "Livewire"],
-          "database": ["PostgreSQL"]
+          "frameworks": ["Laravel", "Livewire"],
+          "databases": ["PostgreSQL"]
         },
         "testing": ["PHPUnit"],
-        "ci-cd": ["Amazon AWS (EC2)"]
+        "ci_cd": ["Amazon AWS (EC2)"]
       }
     },
     {
@@ -46,11 +49,11 @@
         "languages": ["JavaScript"],
         "frontend": ["React", "Redux", "Styled Components"],
         "backend": {
-          "frameworks-libraries": ["Express"],
-          "database": ["SQLite"]
+          "frameworks": ["Express"],
+          "databases": ["SQLite"]
         },
         "testing": ["Jest", "React Testing Library", "Supertest"],
-        "ci-cd": ["Circle CI", "Netlify", "Heroku"]
+        "ci_cd": ["Circle CI", "Netlify", "Heroku"]
       }
     }
   ]
