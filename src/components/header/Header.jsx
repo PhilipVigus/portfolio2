@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <Box bg="purple.300">
-      <Flex w="100%" px={6} py={5} align="center" justify="right">
+      <Flex w="100%" p={[null, null, 5]} justify="right">
         {!isMobile && (
           <HStack spacing="10">
             <Links />
