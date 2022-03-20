@@ -1,0 +1,94 @@
+{
+  "projects": [
+    {
+      "title": "URL Shortener",
+      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack",
+      "technologies": {
+        "languages": ["Java"],
+        "frontend": ["Thymeleaf", "Bootstrap", "Alpine.js"],
+        "backend": {
+          "frameworks": ["Spring Boot"],
+          "databases": ["PostgreSQL"]
+        },
+        "testing": ["JUnit", "Mockito"],
+        "ci_cd": ["GitHub Actions", "Heroku"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/url-shortener",
+        "demo": "http://wibbly.philvigus.com/"
+      }
+    },
+    {
+      "title": "Slack Bot",
+      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "frontend": [],
+        "backend": {
+          "frameworks": ["Node.js", "Slack Bolt"],
+          "databases": []
+        },
+        "testing": ["Jest"],
+        "ci_cd": []
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/external-services-slack-bot",
+        "demo": ""
+      }
+    },
+    {
+      "title": "Film Follower",
+      "description": "A website my wife and I use to track film trailers to watch, and films to shortlist to watch at a later date",
+      "technologies": {
+        "languages": ["PHP"],
+        "frontend": ["Tailwind", "Alpine.js"],
+        "backend": {
+          "frameworks": ["Laravel", "Livewire"],
+          "databases": ["PostgreSQL"]
+        },
+        "testing": ["PHPUnit"],
+        "ci_cd": ["Amazon AWS (EC2)"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/film-follower",
+        "demo": "https://filmfollower.philvigus.com"
+      }
+    },
+    {
+      "title": "Weather App",
+      "description": "A seven day weather forecast app",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "frontend": ["React", "Redux", "Styled Components"],
+        "backend": {
+          "frameworks": ["Express"],
+          "databases": ["SQLite"]
+        },
+        "testing": ["Jest", "React Testing Library", "Supertest"],
+        "ci_cd": ["Circle CI", "Netlify", "Heroku"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/weather-app",
+        "demo": "https://weather-phil.netlify.app"
+      }
+    },
+    {
+      "title": "Portfolio",
+      "description": "My professional portfolio",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "frontend": ["React", "Chakra UI"],
+        "backend": {
+          "frameworks": [],
+          "databases": []
+        },
+        "testing": ["Jest", "React Testing Library"],
+        "ci_cd": ["Netlify"]
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/portfolio2",
+        "demo": "https://www.philvigus.com"
+      }
+    }
+  ]
+}
