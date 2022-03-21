@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { Field, Form, Formik } from 'formik';
 import emailjs from '@emailjs/browser';
+import sanitizeHtml from 'sanitize-html';
 
 function Contact() {
   const validateEmail = (email) => {
@@ -37,7 +38,10 @@ function Contact() {
       onSubmit={(values, { setSubmitting }) => {
         emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
 
-        const emailParams = { user_email: values.email, message: values.message };
+        const emailParams = {
+          user_email: sanitizeHtml(values.email, { allowedTags: [] }),
+          message: sanitizeHtml(values.message, { allowedTags: [] })
+        };
 
         emailjs
           .send(
