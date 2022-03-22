@@ -21,31 +21,35 @@ function Contact() {
     message: Yup.string().required('Message is required')
   });
 
+  const handleSubmit = async (values, setSubmitting) => {
+    setWasSubmitError(false);
+
+    emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+
+    const emailParams = {
+      user_email: values.email,
+      message: sanitizeHtml(values.message, { allowedTags: [] })
+    };
+
+    try {
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        emailParams
+      );
+    } catch (e) {
+      setWasSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ email: '', message: '' }}
       validationSchema={validationSchema}
       onSubmit={async (values, { setSubmitting }) => {
-        setWasSubmitError(false);
-
-        emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
-
-        const emailParams = {
-          user_email: values.email,
-          message: sanitizeHtml(values.message, { allowedTags: [] })
-        };
-
-        try {
-          await emailjs.send(
-            process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-            emailParams
-          );
-        } catch (e) {
-          setWasSubmitError(true);
-        } finally {
-          setSubmitting(false);
-        }
+        handleSubmit(values, setSubmitting);
       }}>
       {(props) => (
         <Form>
