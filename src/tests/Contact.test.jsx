@@ -126,33 +126,4 @@ describe('Contact Page', () => {
       ]);
     });
   });
-
-  it('sanitises the email', async () => {
-    const UNSANITISED_TEST_EMAIL = 'test@email.com<div>test</div>';
-    const SANITISED_TEST_EMAIL = 'test@email.comtest';
-
-    const TEST_MESSAGE = 'test message';
-
-    render(<Contact />);
-
-    userEvent.type(screen.getByLabelText('Email'), UNSANITISED_TEST_EMAIL);
-    userEvent.type(screen.getByLabelText('Message'), TEST_MESSAGE);
-
-    userEvent.click(screen.getByRole('button', { name: 'Submit' }));
-
-    await waitFor(() => {
-      expect(emailjs.init).toHaveBeenCalledTimes(1);
-      expect(emailjs.init.mock.calls[0]).toEqual([process.env.REACT_APP_EMAILJS_USER_ID]);
-
-      expect(emailjs.send).toHaveBeenCalledTimes(1);
-      expect(emailjs.send.mock.calls[0]).toEqual([
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        {
-          user_email: SANITISED_TEST_EMAIL,
-          message: TEST_MESSAGE
-        }
-      ]);
-    });
-  });
 });
