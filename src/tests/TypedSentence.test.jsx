@@ -2,16 +2,18 @@ import { render, screen, waitFor } from '@testing-library/react';
 import TypedSentence from '../components/pages/loading/TypedSentence';
 
 describe('TypedSentence Component', () => {
+  const onFinishTyping = jest.fn();
+
   it('does not initially render any text', () => {
-    render(<TypedSentence sentence="test" />);
+    render(<TypedSentence sentence="test" onFinishTyping={onFinishTyping} />);
 
     expect(screen.queryByText('test')).toBeNull();
   });
 
-  it('renders the first character after the specified time period', async () => {
+  it('renders the sentence eventually', async () => {
     const sentence = 'hi';
 
-    render(<TypedSentence sentence={sentence} />);
+    render(<TypedSentence sentence={sentence} onFinishTyping={onFinishTyping} />);
 
     await waitFor(
       () => {
