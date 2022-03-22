@@ -4,6 +4,7 @@ import Header from './header/Header';
 import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
 import Contact from './pages/contact/Contact';
+import Loading from './pages/loading/Loading';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Box bg="white" w="100%" color="black">
         <Header />
         <Routes>
+          <Route path="/loading" element={<Loading />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
