@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Text } from '@chakra-ui/react';
+import Cursor from './Cursor';
 
 function TypedSentence({ sentence, onFinishTyping }) {
-  const TYPING_DELAY = 300;
+  const TYPING_DELAY = 130;
 
   const [charactersTyped, setCharactersTyped] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     if (charactersTyped < sentence.length) {
@@ -16,12 +17,18 @@ function TypedSentence({ sentence, onFinishTyping }) {
       return () => clearTimeout(timer);
     }
 
+    setShowCursor(false);
     onFinishTyping();
 
     return () => {};
   }, [onFinishTyping, sentence.length, charactersTyped]);
 
-  return <Text>{sentence.slice(0, charactersTyped)}</Text>;
+  return (
+    <>
+      {sentence.slice(0, charactersTyped)}
+      {showCursor && <Cursor />}
+    </>
+  );
 }
 
 TypedSentence.propTypes = {
