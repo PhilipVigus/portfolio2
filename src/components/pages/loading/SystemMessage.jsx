@@ -1,30 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-function SystemMessage({ message, onFinishDisplay, speed }) {
-  const progressString = ' .';
-  const lengthToAdd = progressString.length * 10;
+function SystemMessage({ message, onFinishDisplay }) {
+  const PROGRESS_STEPS = 10;
+  const SPEED = 50;
+  const PROGRESS_STRING = ' .';
+
   const [displayedMessage, setDisplayedMessage] = useState(message);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (displayedMessage.length - message.length < lengthToAdd) {
+    if (progress < PROGRESS_STEPS) {
       const timer = setTimeout(() => {
-        setDisplayedMessage(`${displayedMessage}${progressString}`);
-      }, speed);
+        setDisplayedMessage(`${displayedMessage}${PROGRESS_STRING}`);
+        setProgress((val) => val + 1);
+      }, SPEED);
       return () => clearTimeout(timer);
     }
 
     onFinishDisplay();
+
     return () => {};
-  }, [displayedMessage, onFinishDisplay, message.length, speed, lengthToAdd]);
+  }, [displayedMessage, onFinishDisplay]);
 
   return <span>{`${displayedMessage}`}</span>;
 }
 
 SystemMessage.propTypes = {
   message: PropTypes.string.isRequired,
-  onFinishDisplay: PropTypes.func.isRequired,
-  speed: PropTypes.number.isRequired
+  onFinishDisplay: PropTypes.func.isRequired
 };
 
 export default SystemMessage;

@@ -19,12 +19,7 @@ function LoadingScreen() {
     const nextMessage = systemMessages.shift();
 
     const messageComponent = (
-      <SystemMessage
-        key={nextMessage}
-        message={nextMessage}
-        onFinishDisplay={displayNextMessage}
-        speed={50}
-      />
+      <SystemMessage key={nextMessage} message={nextMessage} onFinishDisplay={displayNextMessage} />
     );
 
     // eslint-disable-next-line no-use-before-define
