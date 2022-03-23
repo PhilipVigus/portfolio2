@@ -2,10 +2,10 @@ import { render, screen, waitFor } from '@testing-library/react';
 import TypedSentence from '../components/pages/loading/TypedSentence';
 
 describe('TypedSentence Component', () => {
-  const onFinishTyping = jest.fn();
+  const onFinishDisplay = jest.fn();
 
   it('does not initially render any text', () => {
-    render(<TypedSentence sentence="test" onFinishTyping={onFinishTyping} />);
+    render(<TypedSentence sentence="test" onFinishDisplay={onFinishDisplay} speed={1} />);
 
     expect(screen.queryByText('test')).toBeNull();
   });
@@ -13,7 +13,7 @@ describe('TypedSentence Component', () => {
   it('renders the sentence eventually', async () => {
     const sentence = 'hi';
 
-    render(<TypedSentence sentence={sentence} onFinishTyping={onFinishTyping} />);
+    render(<TypedSentence sentence={sentence} onFinishDisplay={onFinishDisplay} speed={1} />);
 
     await waitFor(
       () => {

@@ -1,35 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Text } from '@chakra-ui/react';
 
-function SystemMessage({ message, onFinishDisplay, numberOfDots }) {
-  const PROGRESS_STRING = ' .';
-  const [dotsAdded, setDotsAdded] = useState(0);
-
+function SystemMessage({ message, onFinishDisplay, speed }) {
+  const progressString = ' .';
+  const lengthToAdd = progressString.length * 10;
   const [displayedMessage, setDisplayedMessage] = useState(message);
 
   useEffect(() => {
-    if (dotsAdded < numberOfDots) {
+    if (displayedMessage.length - message.length < lengthToAdd) {
       const timer = setTimeout(() => {
-        setDotsAdded(dotsAdded + 1);
-        setDisplayedMessage(`${displayedMessage}${PROGRESS_STRING}`);
-      }, 100);
-
+        setDisplayedMessage(`${displayedMessage}${progressString}`);
+      }, speed);
       return () => clearTimeout(timer);
     }
 
     onFinishDisplay();
-
     return () => {};
-  }, [displayedMessage, onFinishDisplay, dotsAdded]);
+  }, [displayedMessage, onFinishDisplay, message.length, speed, lengthToAdd]);
 
-  return <Text>{`${displayedMessage}`}</Text>;
+  return <span>{`${displayedMessage}`}</span>;
 }
 
 SystemMessage.propTypes = {
   message: PropTypes.string.isRequired,
   onFinishDisplay: PropTypes.func.isRequired,
-  numberOfDots: PropTypes.number.isRequired
+  speed: PropTypes.number.isRequired
 };
 
 export default SystemMessage;

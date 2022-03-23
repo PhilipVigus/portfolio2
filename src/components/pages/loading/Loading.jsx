@@ -1,40 +1,54 @@
-import { Box, Flex } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CommandPrompt from './CommandPrompt';
 import Cursor from './Cursor';
-// import SystemMessage from './SystemMessage';
 import TypedSentence from './TypedSentence';
+import SystemMessage from './SystemMessage';
+import messageData from './data.json';
 
-function Loading() {
-  const DELAY_BEFORE_TYPING = 800;
+function LoadingScreen() {
+  const systemMessages = messageData.messages;
+  const [displayCursor, setDisplayCursor] = useState(true);
 
-  const [isTyping, setIsTyping] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
+  const displayNextMessage = () => {
+    if (systemMessages.length === 0) {
+      return;
+    }
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsTyping(true);
-    }, DELAY_BEFORE_TYPING);
+    setDisplayCursor(false);
+    const nextMessage = systemMessages.shift();
 
-    return () => clearTimeout(timer);
-  }, []);
+    const messageComponent = (
+      <SystemMessage
+        key={nextMessage}
+        message={nextMessage}
+        onFinishDisplay={displayNextMessage}
+        speed={50}
+      />
+    );
 
-  const onFinishTyping = () => {
-    setShowCursor(false);
+    // eslint-disable-next-line no-use-before-define
+    setDisplayedMessages((displayedMessages) => [...displayedMessages, messageComponent]);
   };
 
+  const [displayedMessages, setDisplayedMessages] = useState([
+    <TypedSentence
+      key="load awesome portfolio"
+      sentence="load awesome portfolio"
+      speed={95}
+      onFinishDisplay={displayNextMessage}
+    />
+  ]);
+
   return (
-    <Box p={10} w="75%" mx="auto">
-      <Flex>
+    <Link to="/about">
+      <span style={{ padding: '6vw' }}>
         <CommandPrompt />
-        {isTyping && (
-          <TypedSentence sentence="load awesome portfolio" onFinishTyping={onFinishTyping} />
-        )}
-        {showCursor && <Cursor />}
-      </Flex>
-      {/* <SystemMessage message="test" onFinishDisplay={onFinishTyping} numberOfDots={15} /> */}
-    </Box>
+        {displayedMessages}
+        {displayCursor && <Cursor />}
+      </span>
+    </Link>
   );
 }
 
-export default Loading;
+export default LoadingScreen;
