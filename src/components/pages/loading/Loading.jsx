@@ -36,7 +36,7 @@ function LoadingScreen() {
       key="load awesome portfolio"
       sentence="load awesome portfolio"
       speed={95}
-      onFinishDisplay={displayNextMessage}
+      onFinishTyping={displayNextMessage}
     />
   ]);
 
