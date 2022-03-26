@@ -5,11 +5,12 @@ import Projects from './pages/projects/Projects';
 import Contact from './pages/contact/Contact';
 import Loading from './loading/Loading';
 import Header from './header/Header';
+import Skills from './pages/skills/Skills';
 
 function App() {
   return (
     <BrowserRouter>
-      <Box bg="white" w="100%" color="black">
+      <Box bg="white" w="100%" minH="100vh" color="black">
         <Routes>
           <Route path="/loading" element={<Loading />} />
           <Route
@@ -18,6 +19,15 @@ function App() {
               <>
                 <Header />
                 <About />
+              </>
+            }
+          />
+          <Route
+            path="/skills"
+            element={
+              <>
+                <Header />
+                <Skills />
               </>
             }
           />
