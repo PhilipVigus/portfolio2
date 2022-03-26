@@ -25,10 +25,11 @@ function LoadingScreen() {
 
     const messageComponent = (
       <SystemMessage
-        key={nextMessage}
-        message={nextMessage}
+        key={nextMessage.content}
+        message={nextMessage.content}
         onFinishDisplay={displayNextMessage}
         speed={messageSpeed.current}
+        displayProgress={nextMessage.displayProgress}
       />
     );
 

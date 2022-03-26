@@ -1,16 +1,16 @@
 {
   "messages": [
-    "Demystifying corporate tax affairs",
-    "Embiggening attribute importance",
-    "Wrangling squirrel code",
-    "Manipulating skill matrix cromulance",
-    "Discombobulating ineffective colour choices",
-    "Normalising application uncertainties",
-    "Codifying wibbly line lengths",
-    "Finagling metaphoric page auras",
-    "Mulching page debris",
-    "Cogitating over transcendental musings",
-    "Regurgitating philosophical dead ends",
-    "Ready for awesomeness overload"
+    { "content": "Demystifying corporate tax affairs", "displayProgress": true },
+    { "content": "Embiggening attribute importance", "displayProgress": true },
+    { "content": "Wrangling squirrel code", "displayProgress": true },
+    { "content": "Manipulating skill matrix cromulance", "displayProgress": true },
+    { "content": "Discombobulating ineffective colour choices", "displayProgress": true },
+    { "content": "Normalising application uncertainties", "displayProgress": true },
+    { "content": "Codifying wibbly line lengths", "displayProgress": true },
+    { "content": "Finagling metaphoric page auras", "displayProgress": true },
+    { "content": "Mulching page debris", "displayProgress": true },
+    { "content": "Cogitating over transcendental musings", "displayProgress": true },
+    { "content": "Regurgitating philosophical dead ends", "displayProgress": true },
+    { "content": "Ready for awesomeness overload", "displayProgress": false }
   ]
 }
