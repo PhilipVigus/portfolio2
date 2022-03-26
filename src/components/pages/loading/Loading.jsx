@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Box } from '@chakra-ui/react';
 import CommandPrompt from './CommandPrompt';
 import Cursor from './Cursor';
 import TypedSentence from './TypedSentence';
@@ -37,11 +38,11 @@ function LoadingScreen() {
 
   return (
     <Link to="/about">
-      <span style={{ padding: '6vw' }}>
+      <Box style={{ padding: '6vw' }}>
         <CommandPrompt />
         {displayedMessages}
         {displayCursor && <Cursor />}
-      </span>
+      </Box>
     </Link>
   );
 }
