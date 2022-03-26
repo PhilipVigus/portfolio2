@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
-import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Flex, Box } from '@chakra-ui/react';
 import CommandPrompt from './CommandPrompt';
 import TypedSentence from './TypedSentence';
@@ -11,6 +11,19 @@ function LoadingScreen() {
   const systemMessages = messageData.messages;
   const [displayCursor, setDisplayCursor] = useState(true);
   const messageSpeed = useRef(50);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (systemMessages.length === 0) {
+      const timer = setTimeout(() => {
+        navigate('/about');
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+
+    return () => {};
+  }, [systemMessages.length]);
 
   const displayNextMessage = () => {
     if (systemMessages.length === 0) {
