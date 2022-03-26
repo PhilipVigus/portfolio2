@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Project, { githubLinkText, demoLinkText } from '../components/pages/projects/Project';
 
-describe('Project Component', () => {
+xdescribe('Project Component', () => {
   it('Renders the Project component', () => {
     const testData = {
       title: 'title',
