@@ -4,7 +4,13 @@ import React from 'react';
 function CommandPrompt() {
   return (
     <>
-      <Text as="span">phil@awesome-dev</Text>:<Text as="span">~</Text>
+      <Text as="span" color="green.300">
+        phil@awesome-dev
+      </Text>
+      :
+      <Text as="span" color="teal.200">
+        ~
+      </Text>
       <Text as="span">$ </Text>
     </>
   );

@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Box } from '@chakra-ui/react';
+import { Text, Flex, Box } from '@chakra-ui/react';
 import CommandPrompt from './CommandPrompt';
 import TypedSentence from './TypedSentence';
 import SystemMessage from './SystemMessage';
@@ -40,9 +40,13 @@ function LoadingScreen() {
 
   return (
     <Link to="/about">
-      <Box>
-        <CommandPrompt />
-        {displayedMessages}
+      <Box minH="100vh" minW="100vw" color="white" backgroundColor="black">
+        <Flex minH="100vh" alignItems="flex-end" p={[5, 10, 16, 20]}>
+          <Text display="inline-block" h="min-content" fontSize={['sm', null, 'md']}>
+            <CommandPrompt />
+            {displayedMessages}
+          </Text>
+        </Flex>
       </Box>
     </Link>
   );
