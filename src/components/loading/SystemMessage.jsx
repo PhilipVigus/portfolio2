@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Text } from '@chakra-ui/react';
 
 function SystemMessage({ message, onFinishDisplay, speed, displayProgress }) {
-  const PROGRESS_STEPS = displayProgress ? 50 - message.length : 0;
+  const PROGRESS_STEPS = displayProgress ? 40 - message.length : 0;
   const PROGRESS_STRING = ' .';
 
   const [displayedMessage, setDisplayedMessage] = useState(message);

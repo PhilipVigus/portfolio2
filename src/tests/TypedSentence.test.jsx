@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import TypedSentence from '../components/pages/loading/TypedSentence';
+import TypedSentence from '../components/loading/TypedSentence';
 
 describe('TypedSentence Component', () => {
   const onFinishTyping = jest.fn();
