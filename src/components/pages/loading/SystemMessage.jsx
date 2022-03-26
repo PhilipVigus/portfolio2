@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '@chakra-ui/react';
 
-function SystemMessage({ message, onFinishDisplay }) {
-  const PROGRESS_STEPS = 10;
-  const SPEED = 50;
+function SystemMessage({ message, onFinishDisplay, speed }) {
+  const PROGRESS_STEPS = 50 - message.length;
   const PROGRESS_STRING = ' .';
 
   const [displayedMessage, setDisplayedMessage] = useState(message);
@@ -15,7 +14,7 @@ function SystemMessage({ message, onFinishDisplay }) {
       const timer = setTimeout(() => {
         setDisplayedMessage(`${displayedMessage}${PROGRESS_STRING}`);
         setProgress((val) => val + 1);
-      }, SPEED);
+      }, speed);
       return () => clearTimeout(timer);
     }
 
@@ -29,7 +28,8 @@ function SystemMessage({ message, onFinishDisplay }) {
 
 SystemMessage.propTypes = {
   message: PropTypes.string.isRequired,
-  onFinishDisplay: PropTypes.func.isRequired
+  onFinishDisplay: PropTypes.func.isRequired,
+  speed: PropTypes.number.isRequired
 };
 
 export default SystemMessage;
