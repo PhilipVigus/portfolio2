@@ -1,8 +1,8 @@
+/* eslint-disable no-use-before-define */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
 import CommandPrompt from './CommandPrompt';
-import Cursor from './Cursor';
 import TypedSentence from './TypedSentence';
 import SystemMessage from './SystemMessage';
 import messageData from './data.json';
@@ -16,14 +16,16 @@ function LoadingScreen() {
       return;
     }
 
-    setDisplayCursor(false);
+    if (displayCursor) {
+      setDisplayCursor(false);
+    }
+
     const nextMessage = systemMessages.shift();
 
     const messageComponent = (
       <SystemMessage key={nextMessage} message={nextMessage} onFinishDisplay={displayNextMessage} />
     );
 
-    // eslint-disable-next-line no-use-before-define
     setDisplayedMessages((displayedMessages) => [...displayedMessages, messageComponent]);
   };
 
@@ -38,10 +40,9 @@ function LoadingScreen() {
 
   return (
     <Link to="/about">
-      <Box style={{ padding: '6vw' }}>
+      <Box>
         <CommandPrompt />
         {displayedMessages}
-        {displayCursor && <Cursor />}
       </Box>
     </Link>
   );

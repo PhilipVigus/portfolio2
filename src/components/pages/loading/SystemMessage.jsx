@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Text } from '@chakra-ui/react';
 
 function SystemMessage({ message, onFinishDisplay }) {
   const PROGRESS_STEPS = 10;
@@ -23,7 +24,7 @@ function SystemMessage({ message, onFinishDisplay }) {
     return () => {};
   }, [displayedMessage, onFinishDisplay]);
 
-  return <span>{`${displayedMessage}`}</span>;
+  return <Text>{`${displayedMessage}`}</Text>;
 }
 
 SystemMessage.propTypes = {

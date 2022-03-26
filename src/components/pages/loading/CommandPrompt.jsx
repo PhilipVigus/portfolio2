@@ -1,12 +1,12 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import React from 'react';
 
 function CommandPrompt() {
   return (
-    <Flex>
-      <Text>phil@awesome-dev</Text>:<Text>~</Text>
-      <Text>$ </Text>
-    </Flex>
+    <>
+      <Text as="span">phil@awesome-dev</Text>:<Text as="span">~</Text>
+      <Text as="span">$ </Text>
+    </>
   );
 }
 

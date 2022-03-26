@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '@chakra-ui/react';
+import Cursor from './Cursor';
 
 function TypedSentence({ sentence, speed, onFinishTyping }) {
   const [position, setPosition] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
 
   const getVariedSpeed = () => {
     return Math.floor(Math.random() * 10) + speed;
@@ -17,12 +19,18 @@ function TypedSentence({ sentence, speed, onFinishTyping }) {
       return () => clearTimeout(timer);
     }
 
+    setShowCursor(false);
     onFinishTyping();
 
     return () => {};
   }, [onFinishTyping, sentence.length, position, speed]);
 
-  return <Text>{sentence.slice(0, position)}</Text>;
+  return (
+    <Text as="span">
+      {sentence.slice(0, position)}
+      {showCursor && <Cursor />}
+    </Text>
+  );
 }
 
 TypedSentence.propTypes = {

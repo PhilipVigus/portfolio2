@@ -18,7 +18,7 @@ function Cursor() {
     return null;
   }
 
-  return <Text>&#9608;</Text>;
+  return <Text as="span">&#9608;</Text>;
 }
 
 export default Cursor;
