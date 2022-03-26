@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Cursor from '../components/pages/loading/Cursor';
+import Cursor from '../components/loading/Cursor';
 
 describe('Cursor component', () => {
   it('Renders the component', () => {

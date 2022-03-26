@@ -13,8 +13,6 @@ describe('SkillCard component', () => {
 
     expect(listItems.length).toBe(2);
 
-    console.log(listItems[0].innerHTML);
-
     expect(listItems[0].innerHTML).toBe('skill 1');
     expect(listItems[1].innerHTML).toBe('skill 2');
   });
