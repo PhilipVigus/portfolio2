@@ -11,7 +11,7 @@ function Project({ data }) {
   return (
     <AnimatedBox
       rounded="lg"
-      shadow="md"
+      boxShadow="md"
       bg="dark"
       maxW="lg"
       m="2"
