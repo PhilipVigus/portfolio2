@@ -1,18 +1,19 @@
-import { Box, ListItem, UnorderedList, Text, Heading } from '@chakra-ui/react';
+import { Box, ListItem, Text, Heading, ListIcon, List } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 
 const AnimatedBox = motion(Box);
 const AnimatedText = motion(Text);
-const AnimatedList = motion(UnorderedList);
+const AnimatedList = motion(List);
 
 const containerVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.8
+    y: 20
   },
   visible: {
     opacity: 1,
-    scale: 1,
+    y: 0,
     transition: {
       duration: 0.2,
       delay: 0.2,
@@ -55,7 +56,8 @@ function About() {
           development. I completed the Maker&apos;s Academy boot camp, and soon after secured a role
           as developer with Mumsnet where I still work. I have been heavily involved in the
           migration of the company&apos;s website from a legacy Java implementation to a new
-          codebase using the TALL stack (Tailwind, Alpine, Livewire and Laravel).
+          codebase using the TALL stack (Tailwind, Alpine, Livewire and Laravel), and was promoted
+          to mid-level developer within a year of working there.
         </AnimatedText>
 
         <AnimatedText mt={4} variants={itemVariants}>
@@ -70,20 +72,26 @@ function About() {
         <AnimatedText mt={4} variants={itemVariants}>
           My responsibilities at Mumsnet have included:
         </AnimatedText>
+
         <AnimatedList variants={itemVariants}>
           <ListItem>
+            <ListIcon as={ChevronRightIcon} />
             Day-to-day lead of the project rebuilding the administrative functions of the site
           </ListItem>
           <ListItem>
+            <ListIcon as={ChevronRightIcon} />
             Implementing the CMS using a headless Wordpress with a Laravel frontend
           </ListItem>
           <ListItem>
+            <ListIcon as={ChevronRightIcon} />
             Part of a team of three who responsible for the site&apos;s main forum
           </ListItem>
           <ListItem>
+            <ListIcon as={ChevronRightIcon} />
             Mentoring new developers and onboarding colleagues to the backend codebase
           </ListItem>
           <ListItem>
+            <ListIcon as={ChevronRightIcon} />
             Optimising SQL scripts to speed up the migration of millions of records to a new
             database
           </ListItem>
