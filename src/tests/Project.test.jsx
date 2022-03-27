@@ -6,6 +6,7 @@ describe('Project Component', () => {
     const testData = {
       title: 'title',
       description: 'description',
+      image: 'image.png',
       technologies: {
         languages: ['language'],
         frontend: ['frontend framework'],

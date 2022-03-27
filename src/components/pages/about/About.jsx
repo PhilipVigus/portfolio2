@@ -75,13 +75,9 @@ function About() {
         </AnimatedText>
 
         <AnimatedList>
-          <SkillListItem skillList={data.skills.languages} />
-          <SkillListItem skillList={data.skills.backend} />
-          <SkillListItem skillList={data.skills.frontend} />
-          <SkillListItem skillList={data.skills.databases} />
-          <SkillListItem skillList={data.skills.testing} />
-          <SkillListItem skillList={data.skills.devops} />
-          <SkillListItem skillList={data.skills.other} />
+          {data.skills.map((skill) => (
+            <SkillListItem key={skill.title} skillList={skill} />
+          ))}
         </AnimatedList>
       </Box>
     </AnimatedBox>
