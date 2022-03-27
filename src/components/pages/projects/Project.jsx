@@ -1,23 +1,20 @@
 import { Box, Button, Divider, Flex, Image, Link, Tag, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
 
 const GITHUB_LINK_TEXT = 'GitHub Repo';
 const DEMO_LINK_TEXT = 'Live Demo';
 
-const AnimatedBox = motion(Box);
-
 function Project({ data }) {
   return (
-    <AnimatedBox
+    <Box
       rounded="lg"
       shadow="md"
       bg="dark"
       maxW="lg"
       m="2"
-      animate={{ scale: 1, opacity: 1 }}
-      initial={{ scale: 0.8, opacity: 0 }}
-      transition={{ duration: 0.5 }}>
+      minH="xl"
+      border="1px"
+      borderColor="mid">
       <Image
         roundedTop="lg"
         w="full"
@@ -27,19 +24,12 @@ function Project({ data }) {
         alt="Article"
       />
 
-      <Box p={6}>
+      <Box p={4}>
         <Flex direction="column">
           <Box>
-            <Link
-              display="block"
-              href="/"
-              color="white"
-              fontWeight="bold"
-              fontSize="2xl"
-              mt={2}
-              _hover={{ color: 'gray.600', textDecor: 'underline' }}>
+            <Text display="block" color="white" fontWeight="bold" fontSize="2xl">
               {data.title}
-            </Link>
+            </Text>
             <Text mt={2} fontSize="sm" color="gray.400">
               {data.description}
             </Text>
@@ -48,7 +38,12 @@ function Project({ data }) {
           <Box mt="4">
             <Flex justifyContent="space-between">
               {data.links.github && (
-                <Button as={Link} href={data.links.github} w="50%" bg="lightAccent">
+                <Button
+                  as={Link}
+                  href={data.links.github}
+                  w="50%"
+                  bg="darkAccent"
+                  _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
                   <Flex w="full" alignItems="center">
                     <Image src="images/icons/github.png" boxSize="25" objectFit="cover" me={2} />
                     GitHub
@@ -56,7 +51,13 @@ function Project({ data }) {
                 </Button>
               )}
               {data.links.demo && (
-                <Button as={Link} href={data.links.demo} w="50%" ms={2} bg="darkAccent">
+                <Button
+                  as={Link}
+                  href={data.links.demo}
+                  w="50%"
+                  ms={2}
+                  bg="darkAccent"
+                  _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
                   Demo
                 </Button>
               )}
@@ -101,7 +102,7 @@ function Project({ data }) {
           </Box>
         </Flex>
       </Box>
-    </AnimatedBox>
+    </Box>
   );
 }
 
