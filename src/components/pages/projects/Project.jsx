@@ -23,7 +23,7 @@ function Project({ data }) {
         w="full"
         h={64}
         fit="cover"
-        src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        src={`./images/screenshots/${data.image}`}
         alt="Article"
       />
 
@@ -50,7 +50,7 @@ function Project({ data }) {
               {data.links.github && (
                 <Button as={Link} href={data.links.github} w="50%" bg="lightAccent">
                   <Flex w="full" alignItems="center">
-                    <Image src="github.png" boxSize="25" objectFit="cover" me={2} />
+                    <Image src="images/icons/github.png" boxSize="25" objectFit="cover" me={2} />
                     GitHub
                   </Flex>
                 </Button>
@@ -109,6 +109,7 @@ Project.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     technologies: PropTypes.shape({
       languages: PropTypes.arrayOf(PropTypes.string).isRequired,
       frontend: PropTypes.arrayOf(PropTypes.string).isRequired,
