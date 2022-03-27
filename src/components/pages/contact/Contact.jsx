@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import {
+  Box,
   Button,
   FormControl,
   FormErrorMessage,
   FormLabel,
+  Heading,
   Input,
   Textarea
 } from '@chakra-ui/react';
@@ -12,6 +14,39 @@ import emailjs from '@emailjs/browser';
 import sanitizeHtml from 'sanitize-html';
 import * as Yup from 'yup';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+      delay: 0.1,
+      when: 'beforeChildren',
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 10
+  },
+  visible: {
+    opacity: 1,
+    y: 0
+  }
+};
+
+const AnimatedForm = motion(Form);
+const AnimatedBox = motion(Box);
+const AnimatedButton = motion(Button);
 
 function Contact() {
   const [wasSubmitError, setWasSubmitError] = useState(false);
@@ -45,42 +80,78 @@ function Contact() {
   };
 
   return (
-    <Formik
-      initialValues={{ email: '', message: '' }}
-      validationSchema={validationSchema}
-      onSubmit={async (values, { setSubmitting }) => {
-        handleSubmit(values, setSubmitting);
-      }}>
-      {(props) => (
-        <Form>
-          <Field name="email">
-            {({ field, form }) => (
-              <FormControl isInvalid={form.errors.email && form.touched.email}>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <Input {...field} id="email" placeholder="Email" type="email" />
-                <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-              </FormControl>
-            )}
-          </Field>
+    <Box p={10} w="75%" mx="auto" bg="light" mt={5}>
+      <Formik
+        initialValues={{ email: '', message: '' }}
+        validationSchema={validationSchema}
+        onSubmit={async (values, { setSubmitting }) => {
+          handleSubmit(values, setSubmitting);
+        }}>
+        {(props) => (
+          <AnimatedForm variants={containerVariants} initial="hidden" animate="visible">
+            <Heading variant="section">Contact</Heading>
 
-          <Field name="message">
-            {({ field, form }) => (
-              <FormControl isInvalid={form.errors.message && form.touched.message}>
-                <FormLabel htmlFor="message">Message</FormLabel>
-                <Textarea {...field} id="message" placeholder="Message" type="text" />
-                <FormErrorMessage>{form.errors.message}</FormErrorMessage>
-              </FormControl>
-            )}
-          </Field>
+            <AnimatedBox mt={4} variants={itemVariants}>
+              <Field name="email">
+                {({ field, form }) => (
+                  <FormControl isInvalid={form.errors.email && form.touched.email}>
+                    <FormLabel htmlFor="email">Email</FormLabel>
+                    <Input
+                      {...field}
+                      id="email"
+                      placeholder="Email"
+                      type="email"
+                      bg="white"
+                      border="1px"
+                      borderColor="gray.400"
+                      _hover={{ borderColor: 'mid' }}
+                    />
+                    <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+            </AnimatedBox>
 
-          <Button mt={4} isLoading={props.isSubmitting} type="submit" name="submit">
-            Submit
-          </Button>
+            <AnimatedBox mt={4} variants={itemVariants}>
+              <Field name="message">
+                {({ field, form }) => (
+                  <FormControl isInvalid={form.errors.message && form.touched.message}>
+                    <FormLabel htmlFor="message">Message</FormLabel>
+                    <Textarea
+                      {...field}
+                      id="message"
+                      placeholder="Message"
+                      type="text"
+                      bg="white"
+                      resize="none"
+                      rows={20}
+                      border="1px"
+                      borderColor="gray.400"
+                      _hover={{ borderColor: 'mid' }}
+                    />
+                    <FormErrorMessage>{form.errors.message}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+            </AnimatedBox>
 
-          {wasSubmitError && <p>There was a problem submitting your email. Please try again</p>}
-        </Form>
-      )}
-    </Formik>
+            <AnimatedButton
+              mt={4}
+              isLoading={props.isSubmitting}
+              type="submit"
+              name="submit"
+              bg="darkAccent"
+              color="white"
+              _hover={{ textDecor: 'none', bg: 'lightAccent' }}
+              variants={itemVariants}>
+              Submit
+            </AnimatedButton>
+
+            {wasSubmitError && <p>There was a problem submitting your email. Please try again</p>}
+          </AnimatedForm>
+        )}
+      </Formik>
+    </Box>
   );
 }
 

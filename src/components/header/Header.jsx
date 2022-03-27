@@ -11,7 +11,7 @@ function Header() {
   const handleShowMenuToggle = () => setShowMobileMenu(!showMobileMenu);
 
   return (
-    <Box bg="purple.300">
+    <Box bg="mid" color="white">
       <Flex w="100%" p={[null, null, 5]} justify="right">
         {!isMobile && (
           <HStack spacing="10">

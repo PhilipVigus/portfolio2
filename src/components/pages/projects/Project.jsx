@@ -1,37 +1,114 @@
-import { Box, Link, Text } from '@chakra-ui/react';
+import { Box, Button, Divider, Flex, Image, Link, Tag, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
-const GITHUB_LINK_TEXT = 'GitHub Repo';
-const DEMO_LINK_TEXT = 'Live Demo';
+const GITHUB_LINK_TEXT = 'GitHub';
+const DEMO_LINK_TEXT = 'Demo';
+
+const AnimatedBox = motion(Box);
 
 function Project({ data }) {
   return (
-    <Box p={10} w="75%" mx="auto">
-      <h2>{data.title}</h2>
-      <Text>{data.description}</Text>
-      <Box>
-        {data.technologies.languages.map((language) => (
-          <Text key={language}>{language}</Text>
-        ))}
-        {data.technologies.frontend.map((framework) => (
-          <Text key={framework}>{framework}</Text>
-        ))}
-        {data.technologies.backend.frameworks.map((framework) => (
-          <Text key={framework}>{framework}</Text>
-        ))}
-        {data.technologies.backend.databases.map((database) => (
-          <Text key={database}>{database}</Text>
-        ))}
-        {data.technologies.testing.map((framework) => (
-          <Text key={framework}>{framework}</Text>
-        ))}
-        {data.technologies.ci_cd.map((solution) => (
-          <Text key={solution}>{solution}</Text>
-        ))}
-        <Link href={data.links.github}>{GITHUB_LINK_TEXT}</Link>
-        {data.links.demo !== '' && <Link href={data.links.demo}>{DEMO_LINK_TEXT}</Link>}
+    <AnimatedBox
+      rounded="lg"
+      boxShadow="md"
+      bg="dark"
+      maxW="lg"
+      m="2"
+      minH="xl"
+      border="1px"
+      borderColor="mid"
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}>
+      <Image
+        roundedTop="lg"
+        w="full"
+        h={64}
+        fit="cover"
+        src={`./images/screenshots/${data.image}`}
+        alt="Article"
+      />
+      <Box p={4}>
+        <Flex direction="column">
+          <Box>
+            <Text display="block" color="white" fontWeight="bold" fontSize="2xl">
+              {data.title}
+            </Text>
+            <Text mt={2} fontSize="sm" color="gray.400">
+              {data.description}
+            </Text>
+          </Box>
+
+          <Box mt="4">
+            <Flex justifyContent="space-between">
+              {data.links.github && (
+                <Button
+                  as={Link}
+                  href={data.links.github}
+                  w="50%"
+                  bg="darkAccent"
+                  _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
+                  <Flex w="full" alignItems="center">
+                    <Image src="images/icons/github.png" boxSize="25" objectFit="cover" me={2} />
+                    {GITHUB_LINK_TEXT}
+                  </Flex>
+                </Button>
+              )}
+              {data.links.demo && (
+                <Button
+                  as={Link}
+                  href={data.links.demo}
+                  w="50%"
+                  ms={2}
+                  bg="darkAccent"
+                  _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
+                  {DEMO_LINK_TEXT}
+                </Button>
+              )}
+            </Flex>
+          </Box>
+
+          <Divider mt="4" />
+
+          <Box mt={4}>
+            <Flex alignItems="center" flexWrap="wrap">
+              {data.technologies.languages.map((language) => (
+                <Tag m="2" key={language} bg="projects.language">
+                  {language}
+                </Tag>
+              ))}
+              {data.technologies.frontend.map((tech) => (
+                <Tag m="2" key={tech} bg="projects.frontend">
+                  {tech}
+                </Tag>
+              ))}
+              {data.technologies.backend.frameworks.map((framework) => (
+                <Tag m="2" key={framework} bg="projects.backend">
+                  {framework}
+                </Tag>
+              ))}
+              {data.technologies.backend.databases.map((database) => (
+                <Tag m="2" key={database} bg="projects.databases">
+                  {database}
+                </Tag>
+              ))}
+              {data.technologies.testing.map((framework) => (
+                <Tag m="2" key={framework} bg="projects.testing">
+                  {framework}
+                </Tag>
+              ))}
+              {data.technologies.ci_cd.map((framework) => (
+                <Tag m="2" key={framework} bg="projects.ci_cd">
+                  {framework}
+                </Tag>
+              ))}
+            </Flex>
+          </Box>
+        </Flex>
       </Box>
-    </Box>
+    </AnimatedBox>
   );
 }
 
@@ -39,6 +116,7 @@ Project.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     technologies: PropTypes.shape({
       languages: PropTypes.arrayOf(PropTypes.string).isRequired,
       frontend: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -6,6 +6,7 @@ describe('Project Component', () => {
     const testData = {
       title: 'title',
       description: 'description',
+      image: 'image.png',
       technologies: {
         languages: ['language'],
         frontend: ['frontend framework'],
@@ -32,7 +33,7 @@ describe('Project Component', () => {
     expect(screen.getByText(testData.technologies.backend.databases[0])).toBeInTheDocument();
     expect(screen.getByText(testData.technologies.testing[0])).toBeInTheDocument();
     expect(screen.getByText(testData.technologies.ci_cd[0])).toBeInTheDocument();
-    expect(screen.getByText(githubLinkText).href).toContain('www.github.com');
-    expect(screen.getByText(demoLinkText).href).toContain('www.demo.com');
+    expect(screen.getByRole('link', { name: githubLinkText }).href).toContain('www.github.com');
+    expect(screen.getByRole('link', { name: demoLinkText }).href).toContain('www.demo.com');
   });
 });

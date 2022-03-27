@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import CommandPrompt from '../components/pages/loading/CommandPrompt';
+import CommandPrompt from '../components/loading/CommandPrompt';
 
 describe('CommandPrompt component', () => {
   it('Renders the component', () => {

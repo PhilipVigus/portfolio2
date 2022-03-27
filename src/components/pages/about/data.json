@@ -1,0 +1,32 @@
+{
+  "skills": [
+    {
+      "title": "Languages",
+      "list": ["PHP", "JavaScript", "Java"]
+    },
+    {
+      "title": "Frontend",
+      "list": ["Tailwind", "Alpine", "React", "Styled Components", "Bootstrap", "Chakra UI"]
+    },
+    {
+      "title": "Backend",
+      "list": ["Laravel", "Livewire", "Spring Boot", "Node"]
+    },
+    {
+      "title": "Databases",
+      "list": ["SQL", "MySQL", "PostgreSQL", "Redis", "MongoDB"]
+    },
+    {
+      "title": "Testing",
+      "list": ["TDD", "PHPUnit", "JUnit", "Jest", "React Testing Library"]
+    },
+    {
+      "title": "DevOps",
+      "list": ["Heroku", "AWS", "Circle CI", "Travis CI", "GitHub Actions", "Docker"]
+    },
+    {
+      "title": "Other",
+      "list": ["Git", "Agile/Scrum", "OOP", "RESTful APIs"]
+    }
+  ]
+}
