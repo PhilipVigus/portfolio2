@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Project, { githubLinkText, demoLinkText } from '../components/pages/projects/Project';
 
-xdescribe('Project Component', () => {
+describe('Project Component', () => {
   it('Renders the Project component', () => {
     const testData = {
       title: 'title',
@@ -32,7 +32,7 @@ xdescribe('Project Component', () => {
     expect(screen.getByText(testData.technologies.backend.databases[0])).toBeInTheDocument();
     expect(screen.getByText(testData.technologies.testing[0])).toBeInTheDocument();
     expect(screen.getByText(testData.technologies.ci_cd[0])).toBeInTheDocument();
-    expect(screen.getByText(githubLinkText).href).toContain('www.github.com');
-    expect(screen.getByText(demoLinkText).href).toContain('www.demo.com');
+    expect(screen.getByRole('link', { name: githubLinkText }).href).toContain('www.github.com');
+    expect(screen.getByRole('link', { name: demoLinkText }).href).toContain('www.demo.com');
   });
 });

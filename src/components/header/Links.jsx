@@ -7,9 +7,6 @@ function Links() {
       <UiLink as={Link} to="/about">
         About Me
       </UiLink>
-      <UiLink as={Link} to="/skills">
-        Skills
-      </UiLink>
       <UiLink as={Link} to="/projects">
         Projects
       </UiLink>

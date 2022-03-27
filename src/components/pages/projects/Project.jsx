@@ -2,8 +2,8 @@ import { Box, Button, Divider, Flex, Image, Link, Tag, Text } from '@chakra-ui/r
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
-const GITHUB_LINK_TEXT = 'GitHub Repo';
-const DEMO_LINK_TEXT = 'Live Demo';
+const GITHUB_LINK_TEXT = 'GitHub';
+const DEMO_LINK_TEXT = 'Demo';
 
 const AnimatedBox = motion(Box);
 
@@ -52,7 +52,7 @@ function Project({ data }) {
                   _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
                   <Flex w="full" alignItems="center">
                     <Image src="images/icons/github.png" boxSize="25" objectFit="cover" me={2} />
-                    GitHub
+                    {GITHUB_LINK_TEXT}
                   </Flex>
                 </Button>
               )}
@@ -64,7 +64,7 @@ function Project({ data }) {
                   ms={2}
                   bg="darkAccent"
                   _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
-                  Demo
+                  {DEMO_LINK_TEXT}
                 </Button>
               )}
             </Flex>

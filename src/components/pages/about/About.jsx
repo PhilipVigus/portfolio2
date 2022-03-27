@@ -5,6 +5,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 const AnimatedBox = motion(Box);
 const AnimatedText = motion(Text);
 const AnimatedList = motion(List);
+const AnimatedListItem = motion(ListItem);
 
 const containerVariants = {
   hidden: {
@@ -70,31 +71,38 @@ function About() {
         </AnimatedText>
 
         <AnimatedText mt={4} variants={itemVariants}>
-          My responsibilities at Mumsnet have included:
+          My technical skills include:
         </AnimatedText>
 
-        <AnimatedList variants={itemVariants}>
-          <ListItem>
+        <AnimatedList>
+          <AnimatedListItem variants={itemVariants}>
             <ListIcon as={ChevronRightIcon} />
-            Day-to-day lead of the project rebuilding the administrative functions of the site
-          </ListItem>
-          <ListItem>
+            Languages (PHP, JavaScript, Java)
+          </AnimatedListItem>
+          <AnimatedListItem variants={itemVariants}>
             <ListIcon as={ChevronRightIcon} />
-            Implementing the CMS using a headless Wordpress with a Laravel frontend
-          </ListItem>
-          <ListItem>
+            Backend (Laravel, Livewire, Spring Boot, Node, Express)
+          </AnimatedListItem>
+          <AnimatedListItem variants={itemVariants}>
             <ListIcon as={ChevronRightIcon} />
-            Part of a team of three who responsible for the site&apos;s main forum
-          </ListItem>
-          <ListItem>
+            Frontend (Tailwind, Alpine, React, Styled Components, Bootstrap, Chakra UI)
+          </AnimatedListItem>
+          <AnimatedListItem variants={itemVariants}>
             <ListIcon as={ChevronRightIcon} />
-            Mentoring new developers and onboarding colleagues to the backend codebase
-          </ListItem>
-          <ListItem>
+            Databases (SQL, MySQL, PostgreSQL, Redis, MongoDB)
+          </AnimatedListItem>
+          <AnimatedListItem variants={itemVariants}>
             <ListIcon as={ChevronRightIcon} />
-            Optimising SQL scripts to speed up the migration of millions of records to a new
-            database
-          </ListItem>
+            Testing (TDD, PHPUnit, JUnit, Jest, React Testing Library)
+          </AnimatedListItem>
+          <AnimatedListItem variants={itemVariants}>
+            <ListIcon as={ChevronRightIcon} />
+            DevOps (Heroku, AWS, Netlify, Circle CI, GitHub Actions, Travis CI, Docker)
+          </AnimatedListItem>
+          <AnimatedListItem variants={itemVariants}>
+            <ListIcon as={ChevronRightIcon} />
+            Other (Git, Agile/Scrum, OOP, RESTful APIs, Design Patterns)
+          </AnimatedListItem>
         </AnimatedList>
       </Box>
     </AnimatedBox>

@@ -4,7 +4,6 @@ import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
 import Contact from './pages/contact/Contact';
 import Loading from './loading/Loading';
-import Skills from './pages/skills/Skills';
 import PageWithHeader from '../layout/PageWithHeader';
 
 function App() {
@@ -18,14 +17,6 @@ function App() {
             element={
               <PageWithHeader>
                 <About />
-              </PageWithHeader>
-            }
-          />
-          <Route
-            path="/skills"
-            element={
-              <PageWithHeader>
-                <Skills />
               </PageWithHeader>
             }
           />

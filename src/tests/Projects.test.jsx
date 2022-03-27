@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import data from '../components/pages/projects/data.json';
 import Projects from '../components/pages/projects/Projects';
 
-xdescribe('Projects Page', () => {
+describe('Projects Page', () => {
   it('Renders the projects page', () => {
     render(<Projects />);
 
