@@ -14,6 +14,39 @@ import emailjs from '@emailjs/browser';
 import sanitizeHtml from 'sanitize-html';
 import * as Yup from 'yup';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+      delay: 0.1,
+      when: 'beforeChildren',
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 10
+  },
+  visible: {
+    opacity: 1,
+    y: 0
+  }
+};
+
+const AnimatedForm = motion(Form);
+const AnimatedBox = motion(Box);
+const AnimatedButton = motion(Button);
 
 function Contact() {
   const [wasSubmitError, setWasSubmitError] = useState(false);
@@ -48,8 +81,6 @@ function Contact() {
 
   return (
     <Box p={10} w="75%" mx="auto" bg="light" mt={5}>
-      <Heading variant="section">Contact</Heading>
-
       <Formik
         initialValues={{ email: '', message: '' }}
         validationSchema={validationSchema}
@@ -57,8 +88,10 @@ function Contact() {
           handleSubmit(values, setSubmitting);
         }}>
         {(props) => (
-          <Form>
-            <Box mt={4}>
+          <AnimatedForm variants={containerVariants} initial="hidden" animate="visible">
+            <Heading variant="section">Contact</Heading>
+
+            <AnimatedBox mt={4} variants={itemVariants}>
               <Field name="email">
                 {({ field, form }) => (
                   <FormControl isInvalid={form.errors.email && form.touched.email}>
@@ -77,9 +110,9 @@ function Contact() {
                   </FormControl>
                 )}
               </Field>
-            </Box>
+            </AnimatedBox>
 
-            <Box mt={4}>
+            <AnimatedBox mt={4} variants={itemVariants}>
               <Field name="message">
                 {({ field, form }) => (
                   <FormControl isInvalid={form.errors.message && form.touched.message}>
@@ -100,21 +133,22 @@ function Contact() {
                   </FormControl>
                 )}
               </Field>
-            </Box>
+            </AnimatedBox>
 
-            <Button
+            <AnimatedButton
               mt={4}
               isLoading={props.isSubmitting}
               type="submit"
               name="submit"
               bg="darkAccent"
               color="white"
-              _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
+              _hover={{ textDecor: 'none', bg: 'lightAccent' }}
+              variants={itemVariants}>
               Submit
-            </Button>
+            </AnimatedButton>
 
             {wasSubmitError && <p>There was a problem submitting your email. Please try again</p>}
-          </Form>
+          </AnimatedForm>
         )}
       </Formik>
     </Box>
