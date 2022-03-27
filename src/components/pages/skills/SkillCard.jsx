@@ -1,10 +1,10 @@
-import { Box, Heading, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Box, Flex, Heading, ListItem, Tag, UnorderedList } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const AnimatedBox = motion(Box);
 
-function SkillCard({ title, skills }) {
+function SkillCard({ skills }) {
   return (
     <AnimatedBox
       bg="dark"
@@ -15,19 +15,23 @@ function SkillCard({ title, skills }) {
       animate={{ scale: 1, opacity: 1 }}
       initial={{ scale: 0.8, opacity: 0 }}
       transition={{ duration: 0.5 }}>
-      <Heading>{title}</Heading>
-      <UnorderedList>
-        {skills.map((skill) => (
-          <ListItem key={skill}>{skill}</ListItem>
+      <Heading>{skills.title}</Heading>
+      <Flex as={UnorderedList} wrap="wrap">
+        {skills.list.map((skill) => (
+          <ListItem as={Tag} key={skill} me={2} my={1}>
+            {skill}
+          </ListItem>
         ))}
-      </UnorderedList>
+      </Flex>
     </AnimatedBox>
   );
 }
 
 SkillCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  skills: PropTypes.arrayOf(PropTypes.string).isRequired
+  skills: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    list: PropTypes.arrayOf(PropTypes.string).isRequired
+  }).isRequired
 };
 
 export default SkillCard;
