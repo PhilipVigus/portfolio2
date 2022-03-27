@@ -1,11 +1,11 @@
-import { Box, ListItem, Text, Heading, ListIcon, List } from '@chakra-ui/react';
+import { Box, Text, Heading, List } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { ChevronRightIcon } from '@chakra-ui/icons';
+import SkillListItem from './SkillListItem';
+import data from './data.json';
 
 const AnimatedBox = motion(Box);
 const AnimatedText = motion(Text);
 const AnimatedList = motion(List);
-const AnimatedListItem = motion(ListItem);
 
 const containerVariants = {
   hidden: {
@@ -75,34 +75,13 @@ function About() {
         </AnimatedText>
 
         <AnimatedList>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            Languages (PHP, JavaScript, Java)
-          </AnimatedListItem>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            Backend (Laravel, Livewire, Spring Boot, Node, Express)
-          </AnimatedListItem>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            Frontend (Tailwind, Alpine, React, Styled Components, Bootstrap, Chakra UI)
-          </AnimatedListItem>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            Databases (SQL, MySQL, PostgreSQL, Redis, MongoDB)
-          </AnimatedListItem>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            Testing (TDD, PHPUnit, JUnit, Jest, React Testing Library)
-          </AnimatedListItem>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            DevOps (Heroku, AWS, Netlify, Circle CI, GitHub Actions, Travis CI, Docker)
-          </AnimatedListItem>
-          <AnimatedListItem variants={itemVariants}>
-            <ListIcon as={ChevronRightIcon} />
-            Other (Git, Agile/Scrum, OOP, RESTful APIs, Design Patterns)
-          </AnimatedListItem>
+          <SkillListItem skillList={data.skills.languages} />
+          <SkillListItem skillList={data.skills.backend} />
+          <SkillListItem skillList={data.skills.frontend} />
+          <SkillListItem skillList={data.skills.databases} />
+          <SkillListItem skillList={data.skills.testing} />
+          <SkillListItem skillList={data.skills.devops} />
+          <SkillListItem skillList={data.skills.other} />
         </AnimatedList>
       </Box>
     </AnimatedBox>
