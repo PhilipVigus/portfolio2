@@ -15,6 +15,17 @@ const mainTheme = extendTheme({
       testing: '#f097bd',
       ci_cd: '#e03d99'
     }
+  },
+  components: {
+    Heading: {
+      variants: {
+        section: {
+          fontFamily: 'Bebas Neue',
+          fontSize: '5xl',
+          letterSpacing: 'wider'
+        }
+      }
+    }
   }
 });
 
