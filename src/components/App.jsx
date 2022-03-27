@@ -4,8 +4,8 @@ import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
 import Contact from './pages/contact/Contact';
 import Loading from './loading/Loading';
-import Header from './header/Header';
 import Skills from './pages/skills/Skills';
+import PageWithHeader from '../layout/PageWithHeader';
 
 function App() {
   return (
@@ -16,37 +16,33 @@ function App() {
           <Route
             path="/about"
             element={
-              <>
-                <Header />
+              <PageWithHeader>
                 <About />
-              </>
+              </PageWithHeader>
             }
           />
           <Route
             path="/skills"
             element={
-              <>
-                <Header />
+              <PageWithHeader>
                 <Skills />
-              </>
+              </PageWithHeader>
             }
           />
           <Route
             path="/projects"
             element={
-              <>
-                <Header />
+              <PageWithHeader>
                 <Projects />
-              </>
+              </PageWithHeader>
             }
           />
           <Route
             path="/contact"
             element={
-              <>
-                <Header />
+              <PageWithHeader>
                 <Contact />
-              </>
+              </PageWithHeader>
             }
           />
           <Route path="*" element={<Navigate to="/about" replace />} />
