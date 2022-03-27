@@ -1,12 +1,15 @@
 import { Box, Button, Divider, Flex, Image, Link, Tag, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 const GITHUB_LINK_TEXT = 'GitHub Repo';
 const DEMO_LINK_TEXT = 'Live Demo';
 
+const AnimatedBox = motion(Box);
+
 function Project({ data }) {
   return (
-    <Box
+    <AnimatedBox
       rounded="lg"
       shadow="md"
       bg="dark"
@@ -14,7 +17,11 @@ function Project({ data }) {
       m="2"
       minH="xl"
       border="1px"
-      borderColor="mid">
+      borderColor="mid"
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}>
       <Image
         roundedTop="lg"
         w="full"
@@ -23,7 +30,6 @@ function Project({ data }) {
         src={`./images/screenshots/${data.image}`}
         alt="Article"
       />
-
       <Box p={4}>
         <Flex direction="column">
           <Box>
@@ -102,7 +108,7 @@ function Project({ data }) {
           </Box>
         </Flex>
       </Box>
-    </Box>
+    </AnimatedBox>
   );
 }
 
