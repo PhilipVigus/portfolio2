@@ -10,7 +10,7 @@
     },
     {
       "title": "Backend",
-      "list": ["Laravel", "Livewire", "Spring Boot", "Node"]
+      "list": ["Laravel", "Livewire", "Spring Boot", "Node", "Express"]
     },
     {
       "title": "Databases",
@@ -26,7 +26,7 @@
     },
     {
       "title": "Other",
-      "list": ["Git", "Agile/Scrum", "OOP", "RESTful APIs"]
+      "list": ["Git", "Agile/Scrum", "OOP", "RESTful APIs", "Design Patterns"]
     }
   ]
 }

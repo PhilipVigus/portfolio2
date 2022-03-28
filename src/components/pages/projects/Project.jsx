@@ -1,6 +1,7 @@
-import { Box, Button, Divider, Flex, Image, Link, Tag, Text } from '@chakra-ui/react';
+import { Box, Button, Divider, Flex, Image, Link, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import TechnologyList from './TechnologyList';
 
 const GITHUB_LINK_TEXT = 'GitHub';
 const DEMO_LINK_TEXT = 'Demo';
@@ -14,7 +15,7 @@ function Project({ data }) {
       boxShadow="md"
       bg="dark"
       maxW="lg"
-      m="2"
+      m={4}
       minH="xl"
       border="1px"
       borderColor="mid"
@@ -28,7 +29,7 @@ function Project({ data }) {
         h={64}
         fit="cover"
         src={`./images/screenshots/${data.image}`}
-        alt="Article"
+        alt={`${data.title} screenshot`}
       />
       <Box p={4}>
         <Flex direction="column">
@@ -51,7 +52,7 @@ function Project({ data }) {
                   bg="darkAccent"
                   _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
                   <Flex w="full" alignItems="center">
-                    <Image src="images/icons/github.png" boxSize="25" objectFit="cover" me={2} />
+                    <Image src="images/icons/github.png" boxSize={25} objectFit="cover" me={2} />
                     {GITHUB_LINK_TEXT}
                   </Flex>
                 </Button>
@@ -72,40 +73,7 @@ function Project({ data }) {
 
           <Divider mt="4" />
 
-          <Box mt={4}>
-            <Flex alignItems="center" flexWrap="wrap">
-              {data.technologies.languages.map((language) => (
-                <Tag m="2" key={language} bg="projects.language">
-                  {language}
-                </Tag>
-              ))}
-              {data.technologies.frontend.map((tech) => (
-                <Tag m="2" key={tech} bg="projects.frontend">
-                  {tech}
-                </Tag>
-              ))}
-              {data.technologies.backend.frameworks.map((framework) => (
-                <Tag m="2" key={framework} bg="projects.backend">
-                  {framework}
-                </Tag>
-              ))}
-              {data.technologies.backend.databases.map((database) => (
-                <Tag m="2" key={database} bg="projects.databases">
-                  {database}
-                </Tag>
-              ))}
-              {data.technologies.testing.map((framework) => (
-                <Tag m="2" key={framework} bg="projects.testing">
-                  {framework}
-                </Tag>
-              ))}
-              {data.technologies.ci_cd.map((framework) => (
-                <Tag m="2" key={framework} bg="projects.ci_cd">
-                  {framework}
-                </Tag>
-              ))}
-            </Flex>
-          </Box>
+          <TechnologyList technologies={data.technologies} />
         </Flex>
       </Box>
     </AnimatedBox>

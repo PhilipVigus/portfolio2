@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import Cursor from '../components/loading/Cursor';
 import PageWithHeader from '../layout/PageWithHeader';
 
 describe('PageWithHeader layout component', () => {
