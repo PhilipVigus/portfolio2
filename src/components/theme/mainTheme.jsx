@@ -25,6 +25,18 @@ const mainTheme = extendTheme({
           letterSpacing: 'wider'
         }
       }
+    },
+    Link: {
+      variants: {
+        active: {
+          fontWeight: 'bold',
+          fontSize: 'lg',
+          color: 'orange.300'
+        },
+        inactive: {
+          color: 'white'
+        }
+      }
     }
   }
 });

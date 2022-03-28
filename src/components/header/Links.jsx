@@ -1,18 +1,11 @@
-import { Link as UiLink } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import HeaderLink from './Link';
 
 function Links() {
   return (
     <>
-      <UiLink as={Link} to="/about">
-        About Me
-      </UiLink>
-      <UiLink as={Link} to="/projects">
-        Projects
-      </UiLink>
-      <UiLink as={Link} to="/contact">
-        Contact
-      </UiLink>
+      <HeaderLink path="/about">About Me</HeaderLink>
+      <HeaderLink path="/projects">Projects</HeaderLink>
+      <HeaderLink path="/contact">Contact</HeaderLink>
     </>
   );
 }
