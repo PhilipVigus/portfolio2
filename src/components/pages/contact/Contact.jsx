@@ -15,34 +15,7 @@ import sanitizeHtml from 'sanitize-html';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.2,
-      delay: 0.1,
-      when: 'beforeChildren',
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 10
-  },
-  visible: {
-    opacity: 1,
-    y: 0
-  }
-};
+import { parentVariants, childVariants } from './animationVariants';
 
 const AnimatedForm = motion(Form);
 const AnimatedBox = motion(Box);
@@ -80,7 +53,7 @@ function Contact() {
   };
 
   return (
-    <Box p={10} w="75%" mx="auto" bg="light" mt={5}>
+    <Box p={10} w="75%" mx="auto">
       <Formik
         initialValues={{ email: '', message: '' }}
         validationSchema={validationSchema}
@@ -88,10 +61,10 @@ function Contact() {
           handleSubmit(values, setSubmitting);
         }}>
         {(props) => (
-          <AnimatedForm variants={containerVariants} initial="hidden" animate="visible">
+          <AnimatedForm variants={parentVariants} initial="hidden" animate="visible">
             <Heading variant="section">Contact</Heading>
 
-            <AnimatedBox mt={4} variants={itemVariants}>
+            <AnimatedBox mt={4} variants={childVariants}>
               <Field name="email">
                 {({ field, form }) => (
                   <FormControl isInvalid={form.errors.email && form.touched.email}>
@@ -112,7 +85,7 @@ function Contact() {
               </Field>
             </AnimatedBox>
 
-            <AnimatedBox mt={4} variants={itemVariants}>
+            <AnimatedBox mt={4} variants={childVariants}>
               <Field name="message">
                 {({ field, form }) => (
                   <FormControl isInvalid={form.errors.message && form.touched.message}>
@@ -143,7 +116,7 @@ function Contact() {
               bg="darkAccent"
               color="white"
               _hover={{ textDecor: 'none', bg: 'lightAccent' }}
-              variants={itemVariants}>
+              variants={childVariants}>
               Submit
             </AnimatedButton>
 
