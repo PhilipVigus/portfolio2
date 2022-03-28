@@ -1,4 +1,4 @@
-import { ListIcon, ListItem } from '@chakra-ui/react';
+import { ListIcon, ListItem, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -10,7 +10,10 @@ function SkillListItem({ skillList }) {
   return (
     <AnimatedListItem variants={childVariants}>
       <ListIcon as={ChevronRightIcon} />
-      {`${skillList.title} (${skillList.list.join(', ')})`}
+      <Text as="span" fontWeight="bold">
+        {skillList.title}{' '}
+      </Text>
+      {`(${skillList.list.join(', ')})`}
     </AnimatedListItem>
   );
 }
