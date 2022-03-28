@@ -2,7 +2,7 @@
   "projects": [
     {
       "title": "URL Shortener",
-      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack",
+      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack.",
       "image": "wibbly.png",
       "technologies": {
         "languages": ["Java"],
@@ -21,7 +21,7 @@
     },
     {
       "title": "Slack Bot",
-      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack",
+      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack.",
       "image": "slackbot.png",
       "technologies": {
         "languages": ["JavaScript"],
@@ -59,7 +59,7 @@
     },
     {
       "title": "Weather App",
-      "description": "A seven day weather forecast app",
+      "description": "A seven day weather forecast app pulling data from a third-party API.",
       "image": "weather.png",
       "technologies": {
         "languages": ["JavaScript"],
@@ -77,8 +77,8 @@
       }
     },
     {
-      "title": "Portfolio",
-      "description": "My professional portfolio",
+      "title": "My Portfolio",
+      "description": "This website.",
       "image": "wibbly.png",
       "technologies": {
         "languages": ["JavaScript"],
