@@ -21,7 +21,7 @@ function About() {
       <AnimatedText mt={2} variants={childVariants}>
         After qualifying with a degree in Computer Science, I spent the early part of my career in
         the tech industry, initially as a developer before moving into business development. I then
-        became an ICT teacher before taking a role in educational quality assurance.
+        taught ICT, before taking a role in educational quality assurance.
       </AnimatedText>
 
       <AnimatedText mt={4} variants={childVariants}>
