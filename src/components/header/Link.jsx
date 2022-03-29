@@ -6,7 +6,12 @@ function HeaderLink({ children, path }) {
   const isActiveLink = useLocation().pathname === path;
 
   return (
-    <UiLink as={Link} to={path} fontSize="2xl" variant={isActiveLink ? 'active' : 'inactive'}>
+    <UiLink
+      as={Link}
+      to={path}
+      fontSize="2xl"
+      variant={isActiveLink ? 'active' : 'inactive'}
+      _hover={{ textDecoration: 'none', color: 'orange.200' }}>
       {children}
     </UiLink>
   );
