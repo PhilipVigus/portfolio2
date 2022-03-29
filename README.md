@@ -23,12 +23,9 @@ This is my professional portfolio.
 git clone git@github.com:PhilipVigus/portfolio2.git
 ```
 
-### Starting the app locally
-
 The following assumes you have node and npm set up on your machine
 
 ```bash
-# start the application
 npm start
 ```
 
