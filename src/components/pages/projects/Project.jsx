@@ -50,12 +50,9 @@ function Project({ data }) {
                   href={data.links.github}
                   target="_blank"
                   w="50%"
-                  bg="darkAccent"
+                  bg="orange.500"
                   _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
-                  <Flex w="full" alignItems="center">
-                    <Image src="images/icons/github.png" boxSize={25} objectFit="cover" me={2} />
-                    {GITHUB_LINK_TEXT}
-                  </Flex>
+                  {GITHUB_LINK_TEXT}
                 </Button>
               )}
               {data.links.demo && (
@@ -65,7 +62,7 @@ function Project({ data }) {
                   target="_blank"
                   w="50%"
                   ms={2}
-                  bg="darkAccent"
+                  bg="light"
                   _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
                   {DEMO_LINK_TEXT}
                 </Button>
