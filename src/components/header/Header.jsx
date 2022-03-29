@@ -28,7 +28,7 @@ function Header() {
           <Text fontFamily="Bebas Neue" fontSize="6xl" letterSpacing="wider">
             Phil Vigus
           </Text>
-          <Flex mt={-2} alignItems="center" justifyContent="space-between" ms={-2.5}>
+          <Flex mt={-5} alignItems="center" justifyContent="space-between" ms={-2.5}>
             <SocialLink href="https://www.linkedin.com/in/philvigus/">
               <FaLinkedin size="1.5em" />
             </SocialLink>

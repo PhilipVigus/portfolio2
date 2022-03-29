@@ -48,6 +48,7 @@ function Project({ data }) {
                 <Button
                   as={Link}
                   href={data.links.github}
+                  target="_blank"
                   w="50%"
                   bg="darkAccent"
                   _hover={{ textDecor: 'none', bg: 'lightAccent' }}>
@@ -61,6 +62,7 @@ function Project({ data }) {
                 <Button
                   as={Link}
                   href={data.links.demo}
+                  target="_blank"
                   w="50%"
                   ms={2}
                   bg="darkAccent"
