@@ -13,7 +13,7 @@ function SkillListItem({ skillList }) {
       <Text as="span" fontWeight="bold">
         {skillList.title}{' '}
       </Text>
-      {`(${skillList.list.join(', ')})`}
+      {`- ${skillList.list.join(', ')}`}
     </AnimatedListItem>
   );
 }

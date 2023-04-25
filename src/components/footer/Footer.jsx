@@ -4,7 +4,7 @@ function Footer() {
   return (
     <Box bg="mid" color="white">
       <Container justify="center" align="center" p={4}>
-        <Text>© 2022 Phil Vigus</Text>
+        <Text>© 2023 Phil Vigus</Text>
       </Container>
     </Box>
   );

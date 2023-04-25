@@ -50,12 +50,12 @@ function About() {
       </AnimatedList>
 
       <AnimatedText mt={4} variants={childVariants}>
-        In addition to the technical knowledge required to work as a developer, I have excellent
-        communication and general interpersonal skills from the various client-facing roles I have
-        held in the past. I love the blend of creative and analytical skills required to be a
-        developer, and seeing an application grow before my eyes really excites me. I am happiest
-        when I&apos;m learning, and the constantly changing tech landscape means that there will
-        always be something new to understand.
+        In addition to my technical knowledge, I have excellent communication and general
+        interpersonal skills from the various client-facing roles I have held in the past. I love
+        the blend of creative and analytical skills required to be a developer, and seeing an
+        application grow before my eyes really excites me. I am happiest when I&apos;m learning, and
+        the constantly changing tech landscape means that there will always be something new to
+        understand.
       </AnimatedText>
     </AnimatedBox>
   );
