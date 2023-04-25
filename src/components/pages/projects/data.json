@@ -1,40 +1,21 @@
 {
   "projects": [
     {
-      "title": "URL Shortener",
-      "description": "A URL shortener implemented in Java Spring Boot, which I used to help me learn the stack.",
-      "image": "wibbly.png",
+      "title": "Database Entity Factories",
+      "description": "Allows you to easily create and persist entities with random but logical attributes using Spring Boot and Hibernate.",
+      "image": "db-entities.jpg",
       "technologies": {
         "languages": ["Java"],
-        "frontend": ["Thymeleaf", "Bootstrap", "Alpine.js"],
-        "backend": {
-          "frameworks": ["Spring Boot"],
-          "databases": ["PostgreSQL"]
-        },
-        "testing": ["JUnit", "Mockito"],
-        "ci_cd": ["GitHub Actions", "Heroku"]
-      },
-      "links": {
-        "github": "https://github.com/PhilipVigus/url-shortener",
-        "demo": ""
-      }
-    },
-    {
-      "title": "Slack Bot",
-      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack.",
-      "image": "slackbot.png",
-      "technologies": {
-        "languages": ["JavaScript"],
         "frontend": [],
         "backend": {
-          "frameworks": ["Node.js", "Slack Bolt"],
-          "databases": []
+          "frameworks": ["Spring Boot"],
+          "databases": ["Hibernate", "PostgreSQL"]
         },
-        "testing": ["Jest"],
+        "testing": ["JUnit"],
         "ci_cd": []
       },
       "links": {
-        "github": "https://github.com/PhilipVigus/external-services-slack-bot",
+        "github": "https://github.com/PhilipVigus/db-entity-factories",
         "demo": ""
       }
     },
@@ -58,21 +39,40 @@
       }
     },
     {
-      "title": "Weather App",
-      "description": "A seven day weather forecast app pulling data from a third-party API.",
-      "image": "weather.png",
+      "title": "URL Shortener",
+      "description": "A URL shortener implemented in Java Spring Boot.",
+      "image": "wibbly.png",
       "technologies": {
-        "languages": ["JavaScript"],
-        "frontend": ["React", "Redux", "Styled Components"],
+        "languages": ["Java"],
+        "frontend": ["Thymeleaf", "Bootstrap", "Alpine.js"],
         "backend": {
-          "frameworks": ["Express"],
-          "databases": ["SQLite"]
+          "frameworks": ["Spring Boot"],
+          "databases": ["PostgreSQL"]
         },
-        "testing": ["Jest", "React Testing Library", "Supertest"],
-        "ci_cd": ["Circle CI", "Netlify", "Heroku"]
+        "testing": ["JUnit", "Mockito"],
+        "ci_cd": []
       },
       "links": {
-        "github": "https://github.com/PhilipVigus/weather-app",
+        "github": "https://github.com/PhilipVigus/url-shortener",
+        "demo": ""
+      }
+    },
+    {
+      "title": "Slack Bot",
+      "description": "A bot that keeps track of the health status of external services such as Trello, Github and Slack.",
+      "image": "slackbot.png",
+      "technologies": {
+        "languages": ["JavaScript"],
+        "frontend": [],
+        "backend": {
+          "frameworks": ["Node.js", "Slack Bolt"],
+          "databases": []
+        },
+        "testing": ["Jest"],
+        "ci_cd": []
+      },
+      "links": {
+        "github": "https://github.com/PhilipVigus/external-services-slack-bot",
         "demo": ""
       }
     },

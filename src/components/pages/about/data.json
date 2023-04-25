@@ -2,7 +2,7 @@
   "skills": [
     {
       "title": "Languages",
-      "list": ["PHP", "JavaScript", "Java"]
+      "list": ["Java", "JavaScript/TypeScript", "PHP"]
     },
     {
       "title": "Frontend",
@@ -10,11 +10,11 @@
     },
     {
       "title": "Backend",
-      "list": ["Laravel", "Livewire", "Spring Boot", "Node", "Express"]
+      "list": ["Spring Boot", "Hibernate", "Serverless Framework", "Laravel", "Livewire", "Node"]
     },
     {
       "title": "Databases",
-      "list": ["SQL", "MySQL", "PostgreSQL", "Redis", "MongoDB"]
+      "list": ["SQL (MySQL, PostgreSQL)", "NoSQL (DynamoDB, Redis, MongoDB)"]
     },
     {
       "title": "Testing",
@@ -22,7 +22,7 @@
     },
     {
       "title": "DevOps",
-      "list": ["Heroku", "AWS", "Circle CI", "Travis CI", "GitHub Actions", "Docker"]
+      "list": ["AWS", "Terraform", "GitHub Actions", "Docker", "Digital Ocean"]
     },
     {
       "title": "Other",

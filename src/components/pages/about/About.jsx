@@ -25,18 +25,18 @@ function About() {
       </AnimatedText>
 
       <AnimatedText mt={4} variants={childVariants}>
-        About two and a half years a go I changed direction, returning to my roots in software
-        development. I completed the Maker&apos;s Academy boot camp, and soon after secured a role
-        as a developer with Mumsnet. I was heavily involved in the migration of the company&apos;s
-        website from a legacy Java implementation to a new codebase using the TALL stack (Tailwind,
-        Alpine, Livewire and Laravel), and was promoted to mid-level developer within a year of
-        working there.
+        About three years a go I changed direction, returning to my roots in software development. I
+        completed the Maker&apos;s Academy boot camp, and soon after secured a role as a developer
+        with Mumsnet. I was heavily involved in the migration of the company&apos;s website from a
+        legacy Java implementation to a new codebase using the TALL stack (Tailwind, Alpine,
+        Livewire and Laravel), and was promoted to mid-level developer within a year of working
+        there.
       </AnimatedText>
 
       <AnimatedText mt={4} variants={childVariants}>
         After several years at Mumsnet I decided it was time to move on, and took a role based in
         Stockholm with Devoteam Creative Tech. I am now working as a backend developer/consultant
-        with a focus on Java and AWS.
+        with a focus on Java, JavaScript/TypeScript and AWS.
       </AnimatedText>
 
       <AnimatedText mt={4} variants={childVariants}>
